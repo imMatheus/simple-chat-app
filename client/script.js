@@ -1,5 +1,7 @@
 async function getMessages() {
-    const response = await fetch('http://localhost:3000/messages')
+    const response = await fetch(
+        'https://simple-chat-app-server.onrender.com/messages'
+    )
     const messages = await response.json()
 
     const container = document.getElementById('message-container')
@@ -19,7 +21,7 @@ const input = document.getElementById('input')
 const button = document.getElementById('button')
 
 button.addEventListener('click', async () => {
-    await fetch('http://localhost:3000/message', {
+    await fetch('https://simple-chat-app-server.onrender.com/message', {
         body: JSON.stringify({
             text: input.value,
         }),
