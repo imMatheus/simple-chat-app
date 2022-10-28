@@ -21,6 +21,8 @@ const input = document.getElementById('input')
 const button = document.getElementById('button')
 
 button.addEventListener('click', async () => {
+    if (!input.value) return
+
     await fetch('https://simple-chat-app-server.onrender.com/message', {
         body: JSON.stringify({
             text: input.value,
